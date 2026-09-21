@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "applications",
+  "info": {
+    "singularName": "application",
+    "pluralName": "applications",
+    "displayName": "Application"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "full_name": {
+      "type": "string"
+    },
+    "student_id": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "course": {
+      "type": "string"
+    },
+    "application_status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Under Review",
+        "Approved",
+        "Rejected"
+      ]
+    },
+    "scholarship": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::scholarship.scholarship",
+      "inversedBy": "applications"
+    },
+    "requirements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::requirement.requirement",
+      "mappedBy": "application"
+    }
+  }
+}

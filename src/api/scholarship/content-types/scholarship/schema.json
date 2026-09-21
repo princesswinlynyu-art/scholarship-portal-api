@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scholarships",
+  "info": {
+    "singularName": "scholarship",
+    "pluralName": "scholarships",
+    "displayName": "Scholarship"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "scholaramount": {
+      "type": "biginteger"
+    },
+    "dead_line": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "eligibilty": {
+      "type": "richtext"
+    },
+    "stat": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "Closed"
+      ]
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::application.application",
+      "mappedBy": "scholarship"
+    }
+  }
+}

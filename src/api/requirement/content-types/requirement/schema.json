@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "requirements",
+  "info": {
+    "singularName": "requirement",
+    "pluralName": "requirements",
+    "displayName": "Requirement"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "document_name": {
+      "type": "string"
+    },
+    "file": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "application": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::application.application",
+      "inversedBy": "requirements"
+    }
+  }
+}
